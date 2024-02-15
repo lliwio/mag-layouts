@@ -1,0 +1,246 @@
+html {
+    padding:0;
+}
+    
+body {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: #3C3633;
+}
+
+header {
+    width:100%;
+    top:0;
+    left:0;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+header h1 {
+    font-size: .9rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.raspberry {
+    --bg-color: #D81159;
+    color: #fff;
+}
+
+.yellow {
+    --bg-color: #F5EEE6;
+}
+
+section.layout {
+    background: var(--bg-color);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    gap: 2rem;
+    grid-auto-flow: row;
+    grid-template-areas: "text";
+    padding-bottom: 2rem;
+    width:100%;
+    margin: 0 auto;
+}
+
+.images {
+    grid-area: numerology;
+}
+
+.numbering {
+    grid-area: numerology;
+}
+
+.text {
+    grid-area: text;
+}
+
+.single-image {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .container {
+      grid-template-columns: repeat(14, minmax(0, 1fr));
+    }
+    .images {
+      grid-area: images;
+    }
+    .numbering {
+      grid-area: numbering;
+    }
+   
+    .v1 {
+      grid-template-areas:
+        "images images images images images images . numbering numbering numbering single-image single-image single-image single-image single-image"
+        "images images images images images images text text text text single-image single-image single-image single-image single-image";
+    }
+    .v1 .single-image {
+      grid-area: single-image;
+      display: block;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(14, 1fr);
+    gap: 0.5rem;
+}
+  
+.img-1 {
+    grid-column: 1 / span 6;
+    grid-row: 1 / span 4;
+}
+.img-2 {
+    grid-column: 7 / span 6;
+    grid-row: 2 / span 2;
+    aspect-ratio: 1/1;
+}
+.img-3 {
+    grid-column: 1 / span 6;
+    grid-row: 5 / span 2;
+}
+.img-4 {
+    grid-column: 7 / span 8;
+    grid-row: 4 / span 4;
+}
+
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-rows: repeat(11, 73px);
+        grid-template-columns: repeat(9, minmax(0, 1fr));
+        row-gap: 1rem;
+        column-gap: 1rem;
+
+        .img-1 {
+            grid-column: 1 / span 5;
+            grid-row: 1 / span 7;
+        }
+
+        .img-2 {
+            grid-column: 6 / span 4;
+            grid-row: 3 / span 4;
+        }
+
+        .img-3 {
+            grid-column: 3 / span 3;
+            grid-row: 8 / span 3;
+        }
+        .img-4 {
+            grid-column: 6 / span 3;
+            grid-row: 7 / span 4;
+        }
+    }
+}
+
+ 
+  .numbering {
+    justify-self: center;
+    align-self: center;
+    margin-top: 8rem;
+  }
+  .numbering-box {
+    width: 140px;
+    height: 140px;
+    background: #3C3633;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .numbering-no-wrapper {
+    display: flex;
+    flex-direction: column;
+    color: var(--bg-color);
+    padding-bottom: 25px;
+    align-self: stretch;
+    justify-content: flex-end;
+  }
+  .numbering-no-text {
+    transform: rotate(-90deg);
+    font-size: 1.65rem;
+  }
+  .numbering-text-text {
+    color: var(--bg-color);
+    font-weight: 700;
+    line-height: 0.5;
+    font-size: 154px;
+  }
+  @media (min-width: 1024px) {
+    .numbering {
+      align-self: end;
+      justify-self: auto;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .single-image {
+      grid-area: single-image;
+      aspect-ratio: 1/1;
+      padding-left: 3.75rem;
+      align-self: center;
+    }
+    .img-5 {
+      max-width: none;
+      aspect-ratio: 1/1;
+      width: 100%;
+    }
+  }
+
+
+.text {
+    align-self: top;
+    padding-right: 1rem;
+    padding-left:2rem;
+    margin-left: 2.25rem;
+    margin-right: 2.25rem;
+
+    p {
+        font-size: 1.15rem;
+    }
+  
+    h2 {
+        font-size: 2.75rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .text {
+        margin-left: 0;
+        margin-right: 0;
+
+        h2 {
+            margin-bottom: 1.25rem;
+            padding-top: 0.5rem;
+        }
+
+        p {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+@media (min-width: 1320px) {
+    .text h2 {
+        font-size: 68px;
+    }
+}
